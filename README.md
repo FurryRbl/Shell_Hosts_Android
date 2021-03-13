@@ -1,0 +1,2 @@
+# Shell_Hosts_Android
+使用Shell脚本快速的更新Hosts文件,已解决部分网站的DNS污染问题.
