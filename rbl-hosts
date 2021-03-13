@@ -1,0 +1,40 @@
+echo "请输入序号"
+echo "所有内容均需要root权限"
+echo "1 重置hosta文件"
+echo "2 安装deviantart.com的hosts"
+
+
+#!/bin/bash
+read -p "请输入序号: " n
+if [ -z "$n" ] #判断n是否为空
+then
+    echo "请输入序号"
+    exit #如果输入为空，直接退出脚本
+fi
+
+n1=`echo $n|sed 's/[0-9]//g'`
+
+if [ -n "$n1" ] #判断n1是否不为空
+then
+    echo "未知序号"
+    exit
+fi
+
+case $n in
+    1)
+        su root rm -rf /system/etc/hosts
+        su root cat ~/../usr/etc/rbl-hosts-data/hosts/android.hosts >> /syatem/etc/hosts
+        chmod 777 /system/etc/hosts
+        echo "请重启手机"
+        ;;
+    2) 
+        su root echo >> /system/etc/hosts
+        su root ~/../usr/etc/rbl-hosts-data/hosts/deviantart.com >> /system/etc/hosts
+        chmod 777 /system/etc/hosts
+        echo "请重启手机"
+        ;;
+    *)
+        echo "请输入序号"
+        ;;
+esac
+
