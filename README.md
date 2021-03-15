@@ -3,9 +3,19 @@
   
 安装命令:  
 ````shell
-pkg update && pkg install git && cd ~ && git clone https://github.com/FurryRbl/Shell_Hosts_Android.git && cd  Shell_Hosts_Android && sh install.sh
+pkg update && pkg install git && cd ~ && git clone https://github.com/FurryRbl/Shell_Hosts_Android.git && cd  Shell_Hosts_Android && sh install.sh && cd ~ && rm -rf Shell_Hosts_Android
 ````
 安装完成使用该命令启动  
 ````shell
 rbl-hosts
+````  
+  
+更新命令:  
+````shell
+rbl-hosts-update
+````  
+  
+卸载命令:  
+````shell
+rbl-hosts-uninstall
 ````

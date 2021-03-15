@@ -1,0 +1,36 @@
+echo "是否卸载?"
+echo "这不会还原您的hosts文件"
+echo "输入y开始卸载"
+
+
+#!/bin/bash
+read -p "请输入序号: " n
+if [ -z "$n" ] #判断n是否为空
+then
+    echo "停止卸载"
+    exit #如果输入为空，直接退出脚本
+fi
+
+n1=`echo $n|sed 's/[0-9]//g'`
+
+if [ -n "$n1" ] #判断n1是否不为空
+then
+    echo "停止卸载"
+    exit
+fi
+
+case $n in
+    y)
+    echo "开始卸载"
+    sleep 2
+    rm -rf ~/../usr/bin/rbl-hosts
+    rm -rf ~/../usr/bin/rbl-hosts-update
+    rm -rf ~/../usr/etc/
+    echo "卸载完成"
+    rm -rf ~/../usr/bin/rbl-hosts-uninstall
+        ;;
+    *)
+        echo "停止卸载"
+        ;;
+esac
+
