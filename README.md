@@ -20,4 +20,4 @@ rbl-hosts-update
 rbl-hosts-uninstall
 ````  
   
-改项目即将弃坑,转Windows
+该项目即将弃坑,转Windows
