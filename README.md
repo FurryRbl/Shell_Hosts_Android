@@ -18,4 +18,6 @@ rbl-hosts-update
 卸载命令:  
 ````shell
 rbl-hosts-uninstall
-````
+````  
+  
+改项目即将弃坑,转Windows
